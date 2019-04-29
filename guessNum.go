@@ -12,13 +12,14 @@ import (
 	"time"
 )
 
-// Strips spaces (space, newlines, tabs) from a given string
+// stripSpaces strips spaces (space, newlines, tabs) from a given string
 // Implemented for writing funcs with param and return value
 func stripSpaces(s string) string {
 	return strings.TrimSpace(s)
 }
 
-// Guess Number between 1 and 100 for 10 times
+// Guess guesses Number between 1 and 100 for 10 times
+// Example from Head First Go
 func Guess() {
 	success := false
 	epoch := time.Now().Unix()
