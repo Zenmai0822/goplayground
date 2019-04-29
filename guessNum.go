@@ -1,4 +1,4 @@
-// Package for trying out the Go language
+// Package goplayground is a playground for trying out the Go language
 package goplayground
 
 import (
