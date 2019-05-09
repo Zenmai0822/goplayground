@@ -33,14 +33,25 @@ func printPointers() {
 	fmt.Printf("Literal Value of variable 'pointerOfThree', printed using %%#v: %#v\n", pointerOfThree)
 }
 
+// mutatePointers mutates a pointer of int using two manipulation functions.
+// One mutates the pointer in place, and one returns the modified pointer
 func mutatePointers() {
 	three := 3
 	pointerOfThree := &three
 	fmt.Printf("Value of variable 'three': %d\n", three)
 	plusOnePointer(pointerOfThree)
 	fmt.Printf("Value of variable 'three', after mutation by pointer: %d\n", three)
+	mutatedPointer := plusOneThenReturnPointer(pointerOfThree)
+	fmt.Printf("Value of variable 'three', after mutation again using plusOneThenReturnPointer(): %d\n", *mutatedPointer)
 }
 
+// plusOnePointer mutates the incoming pointer and returns nothing
 func plusOnePointer(numPointer *int) {
 	*numPointer++
+}
+
+// plusOneThenReturnPointer mutates and then changes the incoming pointer
+func plusOneThenReturnPointer(numPointer *int) *int {
+	*numPointer++
+	return numPointer
 }
