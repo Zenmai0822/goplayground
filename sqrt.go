@@ -1,9 +1,9 @@
-package goplayground 
+package goplayground
 
 import (
-	"math"
 	"fmt"
 	"log"
+	"math"
 )
 
 // Sqrt calculates the square root of the given float.
